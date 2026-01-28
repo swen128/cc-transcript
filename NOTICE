@@ -1,0 +1,5 @@
+cc-transcript
+Copyright 2025 cc-transcript contributors
+
+This project is a TypeScript port of claude-code-transcripts by Simon Willison.
+Original project: https://github.com/simonw/claude-code-transcripts
