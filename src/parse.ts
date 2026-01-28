@@ -2,7 +2,8 @@
  * Parse Claude Code session files (JSON and JSONL formats)
  */
 
-import { SessionDataSchema, LoglineSchema, type SessionData, type Logline } from "./schemas.ts";
+import { readFile } from "node:fs/promises";
+import { SessionDataSchema, LoglineSchema, type SessionData, type Logline } from "./schemas.js";
 
 /**
  * Parse a session file and return validated session data
@@ -12,8 +13,7 @@ import { SessionDataSchema, LoglineSchema, type SessionData, type Logline } from
  * - JSONL files have one JSON object per line
  */
 export async function parseSessionFile(filePath: string): Promise<SessionData> {
-  const file = Bun.file(filePath);
-  const content = await file.text();
+  const content = await readFile(filePath, "utf-8");
 
   // Detect format based on file extension or content
   if (filePath.endsWith(".jsonl") || isJsonl(content)) {

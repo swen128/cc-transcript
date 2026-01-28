@@ -4,8 +4,8 @@
 
 import { render } from "preact-render-to-string";
 import type { VNode, ComponentChildren } from "preact";
-import { CSS } from "../assets/styles.ts";
-import { JS, getSearchJS } from "../assets/scripts.ts";
+import { CSS } from "../assets/styles.js";
+import { JS, getSearchJS } from "../assets/scripts.js";
 
 /**
  * Render a Preact VNode to an HTML string

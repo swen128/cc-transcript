@@ -13,7 +13,7 @@ export type {
   Message,
   Logline,
   SessionData,
-} from "./schemas.ts";
+} from "./schemas.js";
 
 /**
  * Options for rendering a transcript

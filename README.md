@@ -1,15 +1,46 @@
 # cc-transcript
 
-To install dependencies:
+TypeScript library that converts Claude Code session files (JSON/JSONL) to paginated HTML transcripts.
+
+## Installation
 
 ```bash
-bun install
+npm install cc-transcript
 ```
 
-To run:
+## Usage
+
+### CLI
 
 ```bash
-bun run index.ts
+npx cc-transcript <input-file> [output-dir] [--repo <owner/repo>]
 ```
 
-This project was created using `bun init` in bun v1.3.5. [Bun](https://bun.com) is a fast all-in-one JavaScript runtime.
+Example:
+
+```bash
+npx cc-transcript ~/.claude/projects/myproject/session.jsonl ./output
+npx cc-transcript session.jsonl ./output --repo myorg/myrepo
+```
+
+### Programmatic API
+
+```typescript
+import { renderTranscriptFromFile } from "cc-transcript";
+
+const output = await renderTranscriptFromFile("session.jsonl", {
+  githubRepo: "owner/repo", // optional: enables commit links
+});
+
+await output.writeTo("./output");
+```
+
+## Output
+
+Generates:
+- `index.html` - Index page with prompts, tool stats, and assistant previews
+- `page-001.html`, `page-002.html`, ... - Paginated transcript pages
+
+## Acknowledgements
+
+Ported from [simonw/claude-code-transcripts](https://github.com/simonw/claude-code-transcripts).

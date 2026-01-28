@@ -1,5 +1,5 @@
 import type { VNode } from "preact";
-import { Truncatable } from "./jsx";
+import { Truncatable } from "./jsx.js";
 
 // Extract filename from path
 function getFilename(filePath: string): string {

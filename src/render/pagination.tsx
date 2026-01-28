@@ -3,8 +3,8 @@
  */
 
 import type { VNode } from "preact";
-import { renderToHtml } from "./jsx.tsx";
-import { PROMPTS_PER_PAGE } from "../types.ts";
+import { renderToHtml } from "./jsx.js";
+import { PROMPTS_PER_PAGE } from "../types.js";
 
 /**
  * Format page number as 3-digit string

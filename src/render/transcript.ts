@@ -4,28 +4,28 @@
 
 import { h } from "preact";
 import type { VNode } from "preact";
-import type { SessionData, Logline, Message, ContentBlock } from "../schemas.ts";
-import type { RenderOptions, TranscriptOutput } from "../types.ts";
-import { PROMPTS_PER_PAGE } from "../types.ts";
-import { parseSessionFile } from "../parse.ts";
-import { renderDocument, renderToHtml } from "./jsx.tsx";
-import { renderContentBlock, UserContent } from "./content-blocks.tsx";
-import { renderMessage, isToolResultMessage } from "./message.tsx";
+import type { SessionData, Logline, Message, ContentBlock } from "../schemas.js";
+import type { RenderOptions, TranscriptOutput } from "../types.js";
+import { PROMPTS_PER_PAGE } from "../types.js";
+import { parseSessionFile } from "../parse.js";
+import { renderDocument, renderToHtml } from "./jsx.js";
+import { renderContentBlock, UserContent } from "./content-blocks.js";
+import { renderMessage, isToolResultMessage } from "./message.js";
 import {
   Pagination,
   IndexPagination,
   paginateConversations,
   getPageFilename,
   type Conversation,
-} from "./pagination.tsx";
+} from "./pagination.js";
 import {
   IndexItem,
   IndexCommit,
   IndexSummary,
   IndexItemLongText,
   analyzeConversation,
-} from "./index-page.tsx";
-import { renderMarkdown } from "./markdown.ts";
+} from "./index-page.js";
+import { renderMarkdown } from "./markdown.js";
 
 function getUserTextPreview(message: Message): string {
   const content = message.content;
@@ -386,12 +386,11 @@ export function renderTranscript(
   return {
     files,
     async writeTo(dir: string): Promise<void> {
-      const { mkdir } = await import("node:fs/promises");
+      const { mkdir, writeFile } = await import("node:fs/promises");
       await mkdir(dir, { recursive: true });
 
       for (const [filename, content] of files) {
-        const file = Bun.file(`${dir}/${filename}`);
-        await Bun.write(file, content);
+        await writeFile(`${dir}/${filename}`, content, "utf-8");
       }
     },
   };

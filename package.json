@@ -3,17 +3,40 @@
   "version": "0.1.0",
   "description": "Convert Claude Code session files to HTML transcripts",
   "type": "module",
-  "main": "./src/index.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
-    ".": "./src/index.ts"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
   },
+  "bin": {
+    "cc-transcript": "./dist/cli.js"
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "test": "bun test"
+    "build": "tsc",
+    "test": "bun test",
+    "prepublishOnly": "bun run build"
+  },
+  "keywords": [
+    "claude",
+    "transcript",
+    "html",
+    "claude-code"
+  ],
+  "author": "PND",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pnd280/cc-transcript"
   },
   "devDependencies": {
-    "@types/bun": "latest"
-  },
-  "peerDependencies": {
+    "@types/bun": "latest",
+    "@types/node": "^22",
     "typescript": "^5"
   },
   "dependencies": {

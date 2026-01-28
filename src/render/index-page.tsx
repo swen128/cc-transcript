@@ -1,6 +1,6 @@
 import { h } from "preact";
-import { escapeHtml } from "./markdown.ts";
-import type { Logline, ContentBlock, ToolUseBlock, ToolResultBlock } from "../schemas.ts";
+import { escapeHtml } from "./markdown.js";
+import type { Logline, ContentBlock, ToolUseBlock, ToolResultBlock } from "../schemas.js";
 
 // ============================================
 // Components

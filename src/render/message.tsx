@@ -3,8 +3,8 @@
  */
 
 import type { VNode } from "preact";
-import type { Message, ContentBlock } from "../schemas.ts";
-import { renderToHtml } from "./jsx.tsx";
+import type { Message, ContentBlock } from "../schemas.js";
+import { renderToHtml } from "./jsx.js";
 
 /**
  * Props for the Message component

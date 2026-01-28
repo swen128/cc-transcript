@@ -1,12 +1,12 @@
 import { h, Fragment } from "preact";
 import type { VNode } from "preact";
-import { renderToHtml, Truncatable } from "./jsx.tsx";
+import { renderToHtml, Truncatable } from "./jsx.js";
 import {
   renderMarkdown,
   formatJson,
   escapeHtml,
   isJsonLike,
-} from "./markdown.ts";
+} from "./markdown.js";
 import type {
   ContentBlock,
   ThinkingBlock,
@@ -14,13 +14,13 @@ import type {
   ToolResultBlock,
   ImageBlock,
   TextBlock,
-} from "../schemas.ts";
+} from "../schemas.js";
 import {
   WriteToolBlock,
   EditToolBlock,
   BashToolBlock,
   TodoWriteBlock,
-} from "./tool-renderers.tsx";
+} from "./tool-renderers.js";
 
 // ============================================
 // Components

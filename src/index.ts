@@ -5,11 +5,11 @@
  */
 
 // Re-export schemas and types
-export * from "./schemas.ts";
-export * from "./types.ts";
+export * from "./schemas.js";
+export * from "./types.js";
 
 // Re-export parsing functions
-export { parseSessionFile } from "./parse.ts";
+export { parseSessionFile } from "./parse.js";
 
 // Re-export main render function
-export { renderTranscript, renderTranscriptFromFile } from "./render/transcript.ts";
+export { renderTranscript, renderTranscriptFromFile } from "./render/transcript.js";
