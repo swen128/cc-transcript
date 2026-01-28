@@ -1,0 +1,25 @@
+{
+  "name": "cc-transcript",
+  "version": "0.1.0",
+  "description": "Convert Claude Code session files to HTML transcripts",
+  "type": "module",
+  "main": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "bun test"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "marked": "^17.0.1",
+    "preact": "^10.28.2",
+    "preact-render-to-string": "^6.6.5",
+    "zod": "^4.3.6"
+  }
+}
