@@ -1,6 +1,6 @@
 {
   "name": "cc-transcript",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Convert Claude Code session files to HTML transcripts",
   "type": "module",
   "main": "./dist/index.js",
