@@ -32,7 +32,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/pnd280/cc-transcript"
+    "url": "https://github.com/swen128/cc-transcript"
   },
   "devDependencies": {
     "@types/bun": "latest",
